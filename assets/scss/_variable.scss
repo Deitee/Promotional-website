@@ -17,17 +17,17 @@
             src: url('../font/Oswald-Regular.ttf');
         }
     // size
-        $newsletter: 90px;
-        $title: 50px;
-        $button: 40px;
+    $newsletter: 90px;
+    $title: 50px;
+    $button: 40px;
+    $menu: 24px;
+    $text: 18px;
+
+    @media screen and (max-width: 960px){
+        $newsletter: 50px;
+        $title: 25px;
+        $button: 30px;
         $menu: 24px;
-        $text: 18px;
-    
-        @media screen and (max-width: 960px){
-            $newsletter: 50px;
-            $title: 25px;
-            $button: 30px;
-            $menu: 24px;
-            $text: 16px;
-        }
+        $text: 16px;
+    }
 

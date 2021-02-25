@@ -13,6 +13,9 @@ body{
 img{
   pointer-events: none;
 }
+p{
+  text-align: justify;
+}
 body{
   color: $white;
   font-family: $text-font;
@@ -290,12 +293,198 @@ body{
       &:nth-child(5){
         text-align: center;
 
-        div{
+        #plateau{
           width: 60%;
+          height: 70vh;
           margin: auto;
           padding-bottom: 2%;
-          img{
+          background: url('../img/llustration_flotaison.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          flex-direction: column;
+          
+          > div{
             width: 100%;
+            height: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            > div{
+              width: 30%;
+              height: 100%;
+
+              &:first-child{
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding-top: 3%;
+                padding-left: 5%;
+
+                div{
+                  width: 50%;
+                  height: 50%;
+                  border: dashed 2px $brown;
+                  border-radius: 5px;  
+                  display: flex;
+                  flex-direction: column;
+
+                  img{
+                    width: 100%;
+                  }
+
+                  h3{
+                    margin: 0;
+                    font-family: $title-font;
+                    font-size: $text;
+                    font-weight: 10;
+                    text-align: center;
+                  }
+                }
+              }
+
+              &:nth-child(2){
+                width: 40%;
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                img{
+                  width: 15%;
+                  position: absolute;
+                  border-radius: 5px;
+                  box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.75);
+
+
+                  &:first-child{
+                    left: 10%;
+                    top: 42%;
+                    transform: rotate(-34deg);
+                  }
+                  &:nth-child(2){
+                    left: 19%;
+                    top: 31%;
+                    transform: rotate(-22deg);
+                  }
+                  &:nth-child(3){
+                    left: 29%;
+                    top: 25%;
+                    transform: rotate(-10deg);
+                  }
+                  &:nth-child(4){
+                    left: 40%;
+                    top: 23%;
+                  }
+                  &:nth-child(5){
+                    left: 51%;
+                    top: 25%;
+                    transform: rotate(10deg);
+                  }
+                  &:nth-child(6){
+                    left: 62%;
+                    top: 33%;
+                    transform: rotate(22deg);
+                  }
+                  &:nth-child(7){
+                    left: 71%;
+                    top: 44%;
+                    transform: rotate(34deg);
+                  }
+                }
+              }
+
+              &:nth-child(3){
+                display: flex;
+                flex-wrap: wrap;
+
+                div{
+                  width: 40%;
+                  height: 50%;
+                  display: flex;
+
+                  &:first-child{
+                    padding-right: 10%;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                  }
+                  &:nth-child(2){
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                  }
+                  &:nth-child(3){
+                    padding-right: 10%;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+                  }
+                  &:last-child{
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                  }
+
+                  img{
+                    height: 50%;
+                    transform: rotate(-90deg);
+                    border-radius: 5px;
+                    box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.75);
+                  }
+                }
+              }
+            }
+
+            > img{
+              width: 10%;
+              border-radius: 10px;
+            }
+            
+            &:first-child{
+
+             > div{
+
+              &:nth-child(2){
+                transform: rotate(180deg);
+
+                img{
+
+                  &:first-child{
+                    left: 10%;
+                    top: 33%;
+                    transform: rotate(-34deg);
+                  }
+                  &:nth-child(2){
+                    left: 19%;
+                    top: 22%;
+                    transform: rotate(-22deg);
+                  }
+                  &:nth-child(3){
+                    left: 29%;
+                    top: 14%;
+                    transform: rotate(-10deg);
+                  }
+                  &:nth-child(4){
+                    left: 40%;
+                    top: 12%;
+                  }
+                  &:nth-child(5){
+                    left: 51%;
+                    top: 14%;
+                    transform: rotate(10deg);
+                  }
+                  &:nth-child(6){
+                    left: 62%;
+                    top: 20%;
+                    transform: rotate(22deg);
+                  }
+                  &:nth-child(7){
+                    left: 71%;
+                    top: 31%;
+                    transform: rotate(34deg);
+                  }
+                }
+              }
+            }
+            }
           }
         }
 
@@ -337,9 +526,6 @@ body{
           width: 45%;
           text-align: center;
 
-          p{
-            text-align: left;
-          }
           a{
             color: $white;
             text-decoration: none;
@@ -352,6 +538,11 @@ body{
             background: $brown;
             border: solid 2px $brown;
             border-radius: 50px;
+            position: relative;
+            top: 50px;
+            display: block;
+            margin: auto;
+            width: min-content;
             transition: 1s;
 
             &:hover{
@@ -383,7 +574,7 @@ body{
           flex-wrap: wrap;
           justify-content: space-between;
 
-          input[type=text]{
+          input[type=text], input[type=email], input[type=number]{
             width: 100%;
             padding-top: 2%;
             padding-bottom: 2%;
@@ -393,13 +584,17 @@ body{
             background: $white;
             border: solid 1px $brown;
             border-radius: 50px;
-
+            
             &:first-child{
               width: 45%;
             }
             &:nth-child(2){
               width: 45%;
             }
+          }
+          input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{
+              -webkit-appearance: none;
+              margin: 0;
           }
           input[type=submit]{
             color: $white;
@@ -475,7 +670,6 @@ body{
           
           > div:first-child{
             width: 100%;
-            height: 100vh;
             padding-top: 5%;
   
             > div{
@@ -516,17 +710,19 @@ body{
             }
           }
         }
-  
-        // &:nth-child(5){
 
-        // }
-  
+        &:nth-child(5){
+          #plateau{
+            width: 100%;
+          }
+        }
+        
         &:nth-child(6){
           flex-direction: column;
   
           > div:first-child{
             width: 100%;
-
+            
             h2{
               display: inherit;
             }
@@ -536,6 +732,7 @@ body{
             width: 90%;
             text-align: center;
             margin: auto;
+            padding-bottom: 5%;
             
             h2{
               display: none;
@@ -693,7 +890,7 @@ body{
         flex-direction: column;
         justify-content: center;
         background: #40281f;
-        height: 100vh;
+        height: -webkit-fill-available;
         margin: 0;
         position: fixed;
         top: -100%;
@@ -754,6 +951,18 @@ body{
             }
           }
         }
+
+        &:last-child{
+          form{
+            width: 75%;
+
+            input[type=text]{
+              &:first-child, &:nth-child(2){
+                width: 100%;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -761,6 +970,9 @@ body{
 
 
 #CybotCookiebotDialog{
+  #CybotCookiebotDialogBodyButtonDecline{
+    background: a82819;
+  }
   #CybotCookiebotDialogPoweredbyLink{
     width: 100%;
     text-align: center;
