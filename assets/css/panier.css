@@ -1,0 +1,399 @@
+@font-face {
+  font-family: "Rye";
+  src: url("../font/Rye-Regular.ttf");
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("../font/Oswald-Regular.ttf");
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  pointer-events: none;
+}
+
+body {
+  color: #ffffff;
+  font-family: "Oswald";
+  font-size: 18px;
+}
+body nav {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background: transparent;
+  transition: 0.5s;
+}
+@media screen and (min-width: 720px) {
+  body nav.scroll {
+    height: 8vh;
+    background: #40281F;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+  }
+}
+body nav div {
+  display: none;
+}
+body nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+}
+body nav ul li {
+  list-style: none;
+}
+body nav ul li a {
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  display: block;
+}
+body nav ul li a img {
+  width: 44px;
+  height: 44px;
+}
+body main section {
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  background: #F2B138;
+  padding-top: 15vh;
+  overflow: hidden;
+}
+body main section > div:first-child {
+  width: 20%;
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+body main section > div:first-child img {
+  width: 100%;
+  height: 50vh;
+}
+body main section > div:first-child h2 {
+  display: none;
+  font-family: "Rye";
+  font-size: 50px;
+  font-weight: 10;
+  text-align: center;
+}
+body main section > div:first-child p:first-of-type {
+  color: #40281F;
+}
+body main section > div:first-child p:last-of-type {
+  text-align: right;
+}
+body main section > div:first-child hr {
+  border: solid 1px #40281F;
+}
+body main section > div:first-child > div div {
+  display: flex;
+  justify-content: space-between;
+}
+body main section > div:first-child > div div select {
+  padding-left: 2%;
+  background: #ffffff;
+  border: solid 1px #40281F;
+  border-radius: 50px;
+}
+body main section > div:last-child {
+  width: 70%;
+}
+body main section > div:last-child h2 {
+  margin: 0;
+  font-family: "Rye";
+  font-size: 50px;
+  font-weight: 10;
+  padding-bottom: 3%;
+  padding-right: 3%;
+}
+body main section > div:last-child > div {
+  display: flex;
+}
+body main section > div:last-child > div .information {
+  width: 60%;
+  height: min-content;
+}
+body main section > div:last-child > div .information form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+body main section > div:last-child > div .information form select {
+  width: 45%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background: #ffffff;
+  border: solid 1px #40281F;
+  border-radius: 50px;
+}
+body main section > div:last-child > div .information form select#Payement {
+  display: none;
+}
+body main section > div:last-child > div .information form input[type=text], body main section > div:last-child > div .information form input[type=email], body main section > div:last-child > div .information form input[type=number] {
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background: #ffffff;
+  border: solid 1px #40281F;
+  border-radius: 50px;
+}
+body main section > div:last-child > div .information form input[type=text]:first-child, body main section > div:last-child > div .information form input[type=text]:nth-child(2), body main section > div:last-child > div .information form input[type=text]:nth-child(5), body main section > div:last-child > div .information form input[type=text]:nth-child(8), body main section > div:last-child > div .information form input[type=text]:nth-child(9), body main section > div:last-child > div .information form input[type=email]:first-child, body main section > div:last-child > div .information form input[type=email]:nth-child(2), body main section > div:last-child > div .information form input[type=email]:nth-child(5), body main section > div:last-child > div .information form input[type=email]:nth-child(8), body main section > div:last-child > div .information form input[type=email]:nth-child(9), body main section > div:last-child > div .information form input[type=number]:first-child, body main section > div:last-child > div .information form input[type=number]:nth-child(2), body main section > div:last-child > div .information form input[type=number]:nth-child(5), body main section > div:last-child > div .information form input[type=number]:nth-child(8), body main section > div:last-child > div .information form input[type=number]:nth-child(9) {
+  width: 45%;
+}
+body main section > div:last-child > div .information form input[type=number]::-webkit-inner-spin-button, body main section > div:last-child > div .information form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body main section > div:last-child > div .information form input[type=submit] {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 40px;
+  font-family: "Rye";
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  background: #40281F;
+  border: solid 2px #40281F;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 1s;
+}
+body main section > div:last-child > div .information form input[type=submit]:hover {
+  background: transparent;
+  transition: 1s;
+}
+body main section > div:last-child > div .information form span a {
+  color: #ffffff;
+}
+body main section > div:last-child > div > div:last-child {
+  width: 30%;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+body main section > div:last-child > div > div:last-child > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+body main section > div:last-child > div > div:last-child > div div {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  height: min-content;
+  padding-bottom: 5%;
+}
+body main section > div:last-child > div > div:last-child > div div input, body main section > div:last-child > div > div:last-child > div div label {
+  cursor: pointer;
+}
+body main section > div:last-child > div > div:last-child > div div a {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+body main section > div:last-child > div > div:last-child > div div img {
+  width: 40px;
+}
+
+@media screen and (max-width: 960px) {
+  body main section {
+    padding-bottom: 5%;
+  }
+  body main section > div:first-child {
+    width: 30%;
+  }
+  body main section > div:last-child {
+    width: 60%;
+  }
+  body main section > div:last-child h2 {
+    text-align: center;
+    padding: 0;
+  }
+  body main section > div:last-child > div .information {
+    width: 95%;
+  }
+  body main section > div:last-child > div .information form {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  body main section > div:last-child > div .information form select#Payement {
+    width: 100%;
+    display: inherit;
+  }
+  body main section > div:last-child > div .information form input[type=submit] {
+    width: 100%;
+  }
+  body main section > div:last-child > div > div:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  body nav div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+    z-index: 999;
+  }
+  body nav div span {
+    width: 100%;
+    height: 5px;
+    background: #F2B138;
+    border: solid 1px #40281F;
+    border-radius: 50px;
+    transform-origin: center;
+    position: absolute;
+    transition: 0.5s;
+  }
+  body nav div span:first-child {
+    margin-bottom: 10px;
+  }
+  body nav div span:first-child.rotate1 {
+    margin-bottom: 0;
+    transform: rotate(45deg);
+    transition: 0.5s;
+  }
+  body nav div span:last-child {
+    width: 50%;
+    margin-top: 10px;
+  }
+  body nav div span:last-child.rotate2 {
+    width: 100%;
+    margin-top: 0;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+  }
+  body nav ul {
+    flex-direction: column;
+    justify-content: center;
+    background: #40281f;
+    height: -webkit-fill-available;
+    margin: 0;
+    position: fixed;
+    top: -100%;
+    transition: 1s;
+  }
+  body nav ul.translate {
+    top: 0;
+    transition: 1s;
+  }
+  body nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  body nav ul li a {
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+  body main section {
+    width: 100%;
+    height: auto;
+    padding-top: 0;
+    flex-direction: column;
+    padding-bottom: 5%;
+  }
+  body main section > div:first-child {
+    width: 100%;
+    padding: 0;
+  }
+  body main section > div:first-child img {
+    width: 100%;
+    height: 50vh;
+  }
+  body main section > div:first-child h2 {
+    display: inherit;
+  }
+  body main section > div:first-child p:first-of-type {
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  body main section > div:first-child p:last-of-type {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  body main section > div:first-child hr {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  body main section > div:first-child > div {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  body main section > div:last-child {
+    width: 100%;
+  }
+  body main section > div:last-child h2 {
+    display: none;
+  }
+  body main section > div:last-child > div {
+    display: flex;
+  }
+  body main section > div:last-child > div .information {
+    width: 100%;
+    height: min-content;
+  }
+  body main section > div:last-child > div .information form {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  body main section > div:last-child > div .information form select {
+    width: 100%;
+  }
+  body main section > div:last-child > div .information form select#Payement {
+    display: inherit;
+  }
+  body main section > div:last-child > div .information form input[type=text]:first-child, body main section > div:last-child > div .information form input[type=text]:nth-child(2), body main section > div:last-child > div .information form input[type=text]:nth-child(5), body main section > div:last-child > div .information form input[type=text]:nth-child(8), body main section > div:last-child > div .information form input[type=text]:nth-child(9), body main section > div:last-child > div .information form input[type=email]:first-child, body main section > div:last-child > div .information form input[type=email]:nth-child(2), body main section > div:last-child > div .information form input[type=email]:nth-child(5), body main section > div:last-child > div .information form input[type=email]:nth-child(8), body main section > div:last-child > div .information form input[type=email]:nth-child(9), body main section > div:last-child > div .information form input[type=number]:first-child, body main section > div:last-child > div .information form input[type=number]:nth-child(2), body main section > div:last-child > div .information form input[type=number]:nth-child(5), body main section > div:last-child > div .information form input[type=number]:nth-child(8), body main section > div:last-child > div .information form input[type=number]:nth-child(9) {
+    width: 100%;
+  }
+  body main section > div:last-child > div .information form input[type=number]::-webkit-inner-spin-button, body main section > div:last-child > div .information form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  body main section > div:last-child > div .information form input[type=submit] {
+    width: 100%;
+  }
+  body main section > div:last-child > div .information form input[type=submit]:hover {
+    background: transparent;
+    transition: 1s;
+  }
+  body main section > div:last-child > div .information form span {
+    text-align: justify;
+  }
+  body main section > div:last-child > div .information form span a {
+    color: #ffffff;
+  }
+  body main section > div:last-child > div > div:last-child {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=panier.css.map */
