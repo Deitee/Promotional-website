@@ -4,10 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="assets/css/panier.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/Logo.png">
 	<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="f3ef2f6b-d132-4bec-a439-58493a95121e" data-blockingmode="auto" type="text/javascript"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="assets/js/panier.js"></script>
     <script src="assets/js/app.js"></script>
-	<title>Site promo</title>
+	<title>Westown Sheriff - Panier</title>
 </head>
 <body>
 	<nav class="nav">
@@ -33,7 +35,7 @@
 			</li>
 			<li>
 				<a href="panier">
-					<img src="assets/img/picto_panier.png">
+					<img src="assets/img/picto/picto_panier.png" alt="Pictogramme panier d'achat">
 				</a>
 			</li>
 			<li>
@@ -44,7 +46,7 @@
 	<main>
         <section class="container">
             <div>
-                <img src="">
+                <img src="#">
                 <h2>Jeu de société Westown Sheriff</h2>
                 <p>Jeu de société à l'univers Western avec une guerre de shérifs</p>
                 <p> {{ options[selected]*[price] }} €</p>
@@ -72,7 +74,7 @@
                 <h2>Jeu de société Westown Sheriff</h2>
                 <div>
                     <div class="information">
-                        <form action="">
+                        <form action="#">
                             <input type="text" placeholder="Nom" required>
                             <input type="text" placeholder="Prénom" required>
                             <input type="email" placeholder="Email" required>
@@ -334,7 +336,7 @@
                             <input type="text" placeholder="Ville" required>
                             <input type="text" placeholder="Adresse" required>
                             <input type="number" placeholder="Numéro de carte" required>
-                            <input type="number" placeholder="Date d'expiration" required>
+                            <input type="text" id="date" placeholder="Date d'expiration" required>
                             <input type="number" placeholder="CGV" required>
                             <select id="Payement">
                                 <option value="Visas" selected="selected">Visa</option>
@@ -352,29 +354,29 @@
                         <p>Moyen de paiement</p>
                         <div>
                             <div>
-                                <input type="radio" id="radio1" name="average" value="radio1">
+                                <input type="radio" id="radio1" name="average" value="radio1" required>
                                 <label for="radio1">
                                     <a href="https://paypal.me/LaMasseThe?locale.x=fr_FR">
-                                        <img src="assets/img/picto_paypal.png">
+                                        <img src="assets/img/picto/picto_paypal.png" alt="Pictogramme du logo Paypal">
                                     </a>
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="radio2" name="average" value="radio2">
+                                <input type="radio" id="radio2" name="average" value="radio2" required>
                                 <label for="radio2">
-                                    <img src="assets/img/picto_mastercard.png">
+                                    <img src="assets/img/picto/picto_mastercard.png" alt="Pictogramme du logo des mastercard">
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="radio3" name="average" value="radio3">
+                                <input type="radio" id="radio3" name="average" value="radio3" required>
                                 <label for="radio3">
-                                    <img src="assets/img/picto_cb.png">
+                                    <img src="assets/img/picto/picto_cb.png" alt="Pictogramme du logo des cartes bancaire">
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="radio4" name="average" value="radio4">
+                                <input type="radio" id="radio4" name="average" value="radio4" required>
                                 <label for="radio4">
-                                    <img src="assets/img/picto_visa.png">
+                                    <img src="assets/img/picto/picto_visa.png" alt="Pictogramme du logo des cartes Visa">
                                 </label>
                             </div>
                         </div>
