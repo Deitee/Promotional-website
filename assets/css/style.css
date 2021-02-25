@@ -22,6 +22,10 @@ img {
   pointer-events: none;
 }
 
+p {
+  text-align: justify;
+}
+
 body {
   color: #ffffff;
   font-family: "Oswald";
@@ -261,13 +265,173 @@ body main section:nth-child(4) > div:last-child h2 {
 body main section:nth-child(5) {
   text-align: center;
 }
-body main section:nth-child(5) div {
+body main section:nth-child(5) #plateau {
   width: 60%;
+  height: 70vh;
   margin: auto;
   padding-bottom: 2%;
+  background: url("../img/llustration_flotaison.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
 }
-body main section:nth-child(5) div img {
+body main section:nth-child(5) #plateau > div {
   width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body main section:nth-child(5) #plateau > div > div {
+  width: 30%;
+  height: 100%;
+}
+body main section:nth-child(5) #plateau > div > div:first-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+body main section:nth-child(5) #plateau > div > div:first-child div {
+  width: 50%;
+  height: 50%;
+  border: dashed 2px #40281F;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+body main section:nth-child(5) #plateau > div > div:first-child div img {
+  width: 100%;
+}
+body main section:nth-child(5) #plateau > div > div:first-child div h3 {
+  margin: 0;
+  font-family: "Rye";
+  font-size: 18px;
+  font-weight: 10;
+  text-align: center;
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(2) {
+  width: 40%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(2) img {
+  width: 15%;
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 10px 10px 12px 0px rgba(0, 0, 0, 0.75);
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(2) img:first-child {
+  left: 10%;
+  top: 42%;
+  transform: rotate(-34deg);
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(2) img:nth-child(2) {
+  left: 19%;
+  top: 31%;
+  transform: rotate(-22deg);
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(2) img:nth-child(3) {
+  left: 29%;
+  top: 25%;
+  transform: rotate(-10deg);
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(2) img:nth-child(4) {
+  left: 40%;
+  top: 23%;
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(2) img:nth-child(5) {
+  left: 51%;
+  top: 25%;
+  transform: rotate(10deg);
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(2) img:nth-child(6) {
+  left: 62%;
+  top: 33%;
+  transform: rotate(22deg);
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(2) img:nth-child(7) {
+  left: 71%;
+  top: 44%;
+  transform: rotate(34deg);
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(3) {
+  display: flex;
+  flex-wrap: wrap;
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(3) div {
+  width: 40%;
+  height: 50%;
+  display: flex;
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(3) div:first-child {
+  padding-right: 10%;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(3) div:nth-child(2) {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(3) div:nth-child(3) {
+  padding-right: 10%;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(3) div:last-child {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+body main section:nth-child(5) #plateau > div > div:nth-child(3) div img {
+  height: 50%;
+  transform: rotate(-90deg);
+  border-radius: 5px;
+  box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.75);
+}
+body main section:nth-child(5) #plateau > div > img {
+  width: 10%;
+  border-radius: 10px;
+}
+body main section:nth-child(5) #plateau > div:first-child > div:nth-child(2) {
+  transform: rotate(180deg);
+}
+body main section:nth-child(5) #plateau > div:first-child > div:nth-child(2) img:first-child {
+  left: 10%;
+  top: 33%;
+  transform: rotate(-34deg);
+}
+body main section:nth-child(5) #plateau > div:first-child > div:nth-child(2) img:nth-child(2) {
+  left: 19%;
+  top: 22%;
+  transform: rotate(-22deg);
+}
+body main section:nth-child(5) #plateau > div:first-child > div:nth-child(2) img:nth-child(3) {
+  left: 29%;
+  top: 14%;
+  transform: rotate(-10deg);
+}
+body main section:nth-child(5) #plateau > div:first-child > div:nth-child(2) img:nth-child(4) {
+  left: 40%;
+  top: 12%;
+}
+body main section:nth-child(5) #plateau > div:first-child > div:nth-child(2) img:nth-child(5) {
+  left: 51%;
+  top: 14%;
+  transform: rotate(10deg);
+}
+body main section:nth-child(5) #plateau > div:first-child > div:nth-child(2) img:nth-child(6) {
+  left: 62%;
+  top: 20%;
+  transform: rotate(22deg);
+}
+body main section:nth-child(5) #plateau > div:first-child > div:nth-child(2) img:nth-child(7) {
+  left: 71%;
+  top: 31%;
+  transform: rotate(34deg);
 }
 body main section:nth-child(5) a {
   color: #ffffff;
@@ -302,9 +466,6 @@ body main section:nth-child(6) > div:last-child {
   width: 45%;
   text-align: center;
 }
-body main section:nth-child(6) > div:last-child p {
-  text-align: left;
-}
 body main section:nth-child(6) > div:last-child a {
   color: #ffffff;
   text-decoration: none;
@@ -317,6 +478,11 @@ body main section:nth-child(6) > div:last-child a {
   background: #40281F;
   border: solid 2px #40281F;
   border-radius: 50px;
+  position: relative;
+  top: 50px;
+  display: block;
+  margin: auto;
+  width: min-content;
   transition: 1s;
 }
 body main section:nth-child(6) > div:last-child a:hover {
@@ -343,7 +509,7 @@ body main section:last-child form {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-body main section:last-child form input[type=text] {
+body main section:last-child form input[type=text], body main section:last-child form input[type=email], body main section:last-child form input[type=number] {
   width: 100%;
   padding-top: 2%;
   padding-bottom: 2%;
@@ -354,11 +520,15 @@ body main section:last-child form input[type=text] {
   border: solid 1px #40281F;
   border-radius: 50px;
 }
-body main section:last-child form input[type=text]:first-child {
+body main section:last-child form input[type=text]:first-child, body main section:last-child form input[type=email]:first-child, body main section:last-child form input[type=number]:first-child {
   width: 45%;
 }
-body main section:last-child form input[type=text]:nth-child(2) {
+body main section:last-child form input[type=text]:nth-child(2), body main section:last-child form input[type=email]:nth-child(2), body main section:last-child form input[type=number]:nth-child(2) {
   width: 45%;
+}
+body main section:last-child form input[type=number]::-webkit-inner-spin-button, body main section:last-child form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 body main section:last-child form input[type=submit] {
   color: #ffffff;
@@ -419,7 +589,6 @@ body footer a img {
   }
   body main section:nth-child(2) > div:first-child {
     width: 100%;
-    height: 100vh;
     padding-top: 5%;
   }
   body main section:nth-child(2) > div:first-child > div div {
@@ -451,6 +620,9 @@ body footer a img {
   body main section:nth-child(4) > div:last-child h2 {
     text-align: center;
   }
+  body main section:nth-child(5) #plateau {
+    width: 100%;
+  }
   body main section:nth-child(6) {
     flex-direction: column;
   }
@@ -464,6 +636,7 @@ body footer a img {
     width: 90%;
     text-align: center;
     margin: auto;
+    padding-bottom: 5%;
   }
   body main section:nth-child(6) > div:last-child h2 {
     display: none;
@@ -597,7 +770,7 @@ body footer a img {
     flex-direction: column;
     justify-content: center;
     background: #40281f;
-    height: 100vh;
+    height: -webkit-fill-available;
     margin: 0;
     position: fixed;
     top: -100%;
@@ -636,6 +809,15 @@ body footer a img {
   body main section:nth-child(4) .slider .slides .slide > img.object {
     width: 50%;
   }
+  body main section:last-child form {
+    width: 75%;
+  }
+  body main section:last-child form input[type=text]:first-child, body main section:last-child form input[type=text]:nth-child(2) {
+    width: 100%;
+  }
+}
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline {
+  background: a82819;
 }
 #CybotCookiebotDialog #CybotCookiebotDialogPoweredbyLink {
   width: 100%;
