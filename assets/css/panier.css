@@ -157,9 +157,14 @@ body main section > div:last-child > div .information form input[type=text], bod
   background: #ffffff;
   border: solid 1px #40281F;
   border-radius: 50px;
+  -moz-appearance: textfield;
 }
 body main section > div:last-child > div .information form input[type=text]:first-child, body main section > div:last-child > div .information form input[type=text]:nth-child(2), body main section > div:last-child > div .information form input[type=text]:nth-child(5), body main section > div:last-child > div .information form input[type=text]:nth-child(8), body main section > div:last-child > div .information form input[type=text]:nth-child(9), body main section > div:last-child > div .information form input[type=email]:first-child, body main section > div:last-child > div .information form input[type=email]:nth-child(2), body main section > div:last-child > div .information form input[type=email]:nth-child(5), body main section > div:last-child > div .information form input[type=email]:nth-child(8), body main section > div:last-child > div .information form input[type=email]:nth-child(9), body main section > div:last-child > div .information form input[type=number]:first-child, body main section > div:last-child > div .information form input[type=number]:nth-child(2), body main section > div:last-child > div .information form input[type=number]:nth-child(5), body main section > div:last-child > div .information form input[type=number]:nth-child(8), body main section > div:last-child > div .information form input[type=number]:nth-child(9) {
   width: 45%;
+}
+body main section > div:last-child > div .information form input::-o-inner-spin-button, body main section > div:last-child > div .information form input::-o-outer-spin-button {
+  -o-appearance: none;
+  margin: 0;
 }
 body main section > div:last-child > div .information form input[type=number]::-webkit-inner-spin-button, body main section > div:last-child > div .information form input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -251,6 +256,13 @@ body main section > div:last-child > div > div:last-child > div div img {
   }
 }
 @media screen and (max-width: 720px) {
+  h2 {
+    font-size: 25px !important;
+  }
+
+  body {
+    font-size: 16px;
+  }
   body nav div {
     width: 50px;
     height: 50px;
@@ -380,6 +392,7 @@ body main section > div:last-child > div > div:last-child > div div img {
   }
   body main section > div:last-child > div .information form input[type=submit] {
     width: 100%;
+    font-size: 30px;
   }
   body main section > div:last-child > div .information form input[type=submit]:hover {
     background: transparent;
@@ -393,6 +406,11 @@ body main section > div:last-child > div > div:last-child > div div img {
   }
   body main section > div:last-child > div > div:last-child {
     display: none;
+  }
+}
+@media screen and (max-width: 540px) {
+  input[type=submit] {
+    font-size: 7vw !important;
   }
 }
 
