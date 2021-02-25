@@ -44,3 +44,20 @@
             spancheck.classList.toggle('rotate1');
             spancheck1.classList.toggle('rotate2');
         };
+
+// changement contenu de la balise title en fonctione de si l'utilisateur est sur la page ou non
+	if (document.documentElement.lang === "fr") { // detecter si la page est en français
+	    nouveauTitre = "Revenez shérif !";
+	} else if(document.documentElement.lang === "en") { // Sinon si elle est en anglais
+	    nouveauTitre = "Come back sheriff !";
+	}
+
+	titreNormal = document.title; 
+
+	document.addEventListener("visibilitychange", function() {
+		if (document.visibilityState === 'visible') { // Si l'utilisateur est sur la page on affiche le titre html
+			document.title = titreNormal;
+		} else { // Sinon on affiche le nouveau titre décrit dans la variable
+			document.title = nouveauTitre;
+		}
+	});
