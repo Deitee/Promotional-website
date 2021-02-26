@@ -330,7 +330,7 @@ body main section:nth-child(5) #plateau > div > div:first-child {
 }
 body main section:nth-child(5) #plateau > div > div:first-child div {
   width: 50%;
-  height: 50%;
+  height: min-content;
   border: dashed 2px #40281F;
   border-radius: 5px;
   display: flex;
@@ -465,6 +465,18 @@ body main section:nth-child(5) #plateau > div:first-child > div:nth-child(2) img
   left: 71%;
   top: 31%;
   transform: rotate(34deg);
+}
+body main section:nth-child(5) #plateau > div:last-child > div:first-child {
+  align-items: flex-end;
+  padding-top: 0;
+  padding-bottom: 3%;
+}
+body main section:nth-child(5) #plateau > div:last-child > div:first-child div {
+  align-items: center;
+}
+body main section:nth-child(5) #plateau > div:last-child > div:first-child div img {
+  transform: rotate(-90deg);
+  width: 50%;
 }
 body main section:nth-child(5) a {
   color: #ffffff;
