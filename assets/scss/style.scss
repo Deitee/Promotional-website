@@ -351,6 +351,7 @@ body{
               width: 30%;
               height: 100%;
 
+              // première colonne  du tableau
               &:first-child{
                 display: flex;
                 justify-content: flex-start;
@@ -360,7 +361,7 @@ body{
 
                 div{
                   width: 50%;
-                  height: 50%;
+                  height: min-content;
                   border: dashed 2px $brown;
                   border-radius: 5px;  
                   display: flex;
@@ -379,7 +380,7 @@ body{
                   }
                 }
               }
-
+              // seconde colonne  du tableau
               &:nth-child(2){
                 width: 40%;
                 position: relative;
@@ -430,6 +431,7 @@ body{
                 }
               }
 
+              // troisième colonne  du tableau
               &:nth-child(3){
                 display: flex;
                 flex-wrap: wrap;
@@ -443,6 +445,7 @@ body{
                     padding-right: 10%;
                     justify-content: flex-end;
                     align-items: flex-end;
+
                   }
                   &:nth-child(2){
                     justify-content: flex-start;
@@ -473,6 +476,7 @@ body{
               border-radius: 10px;
             }
             
+            // première ligne du tableau
             &:first-child{
 
              > div{
@@ -519,6 +523,24 @@ body{
                 }
               }
             }
+            }
+
+            // dernière ligne du tableau
+            &:last-child{
+              > div:first-child{
+                align-items: flex-end;
+                padding-top: 0;
+                padding-bottom: 3%;
+
+                div{
+                  align-items: center;
+
+                  img{
+                    transform: rotate(-90deg);
+                    width: 50%;
+                  }
+                }
+              }
             }
           }
         }
