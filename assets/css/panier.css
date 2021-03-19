@@ -415,3 +415,20 @@ body main section > div:last-child > div > div:last-child > div div img {
 }
 
 /*# sourceMappingURL=panier.css.map */
+#CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline {
+  background: a82819;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogPoweredbyLink {
+  width: 100%;
+  text-align: center;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogPoweredbyLink #CybotCookiebotDialogPoweredbyImage {
+  width: 20%;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContent {
+  padding: 4%;
+  padding-top: 30%;
+}
+#CybotCookiebotDialog #CybotCookiebotDialogBodyContent #CybotCookiebotDialogBodyContentTitle {
+  text-align: center;
+}

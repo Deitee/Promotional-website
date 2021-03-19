@@ -1,4 +1,16 @@
+document.addEventListener("DOMContentLoaded", function() {
 // navigation 
+    const nav = document.querySelector('.nav');
+    const backTop = document.querySelector('#top');
+    let height = backTop.clientHeight;
+
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > height){
+            nav.classList.add('scroll');
+        } else{
+            nav.classList.remove('scroll');
+        }
+    })
 	// recuperation des variables
     const burger = document.querySelector('#burger-nav'); //burger qui contient h1 + les deux span
     const spancheck = document.querySelector('.span-burger');
@@ -61,3 +73,4 @@
 			document.title = nouveauTitre;
 		}
 	});
+})
