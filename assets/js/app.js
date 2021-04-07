@@ -1,14 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
 // navigation 
     const nav = document.querySelector('.nav');
-    const backTop = document.querySelector('#top');
-    let height = backTop.clientHeight;
+    const topPage = document.querySelector('#top');
+    let height = topPage.clientHeight;
+    const backTop = document.querySelector("#backTop")
 
     window.addEventListener('scroll', () => {
         if(window.scrollY > height){
             nav.classList.add('scroll');
+            backTop.classList.add('backTop');
         } else{
             nav.classList.remove('scroll');
+            backTop.classList.remove('backTop');
         }
     })
 	// recuperation des variables

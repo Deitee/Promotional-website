@@ -23,9 +23,63 @@ img {
 }
 
 body {
-  color: #ffffff;
+  color: #40281F;
   font-family: "Oswald";
   font-size: 18px;
+}
+body > div:not(:first-child):not(#backTop) {
+  display: none !important;
+}
+body > div#backTop {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  background: #40281F;
+  border: solid 1px #F2B138;
+  border-radius: 50px;
+  overflow: hidden;
+  z-index: 888;
+  opacity: 0;
+  transition: 0.5s;
+}
+body > div#backTop a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #F2B138;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  animation: jump 2s infinite;
+}
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  20% {
+    bottom: 5px;
+  }
+  30% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 5px;
+  }
+  50% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+body > div#backTop.backTop {
+  display: inherit;
+  opacity: 1;
+  transition: 0.5s;
 }
 body nav {
   width: 100%;
@@ -57,14 +111,19 @@ body nav ul li {
   list-style: none;
 }
 body nav ul li a {
-  color: #ffffff;
+  color: #40281F;
   font-size: 24px;
   text-decoration: none;
   display: block;
+  transition: 0.5s;
 }
 body nav ul li a img {
   width: 44px;
   height: 44px;
+}
+body nav.scroll ul li a {
+  color: #ffffff;
+  transition: 0.5s;
 }
 body main section {
   width: 100%;
@@ -147,7 +206,9 @@ body main section > div:last-child > div .information form select {
 body main section > div:last-child > div .information form select#Payement {
   display: none;
 }
-body main section > div:last-child > div .information form input[type=text], body main section > div:last-child > div .information form input[type=email], body main section > div:last-child > div .information form input[type=number] {
+body main section > div:last-child > div .information form input[type=text],
+body main section > div:last-child > div .information form input[type=email],
+body main section > div:last-child > div .information form input[type=number] {
   width: 100%;
   padding-top: 2%;
   padding-bottom: 2%;
@@ -159,14 +220,26 @@ body main section > div:last-child > div .information form input[type=text], bod
   border-radius: 50px;
   -moz-appearance: textfield;
 }
-body main section > div:last-child > div .information form input[type=text]:first-child, body main section > div:last-child > div .information form input[type=text]:nth-child(2), body main section > div:last-child > div .information form input[type=text]:nth-child(5), body main section > div:last-child > div .information form input[type=text]:nth-child(8), body main section > div:last-child > div .information form input[type=text]:nth-child(9), body main section > div:last-child > div .information form input[type=email]:first-child, body main section > div:last-child > div .information form input[type=email]:nth-child(2), body main section > div:last-child > div .information form input[type=email]:nth-child(5), body main section > div:last-child > div .information form input[type=email]:nth-child(8), body main section > div:last-child > div .information form input[type=email]:nth-child(9), body main section > div:last-child > div .information form input[type=number]:first-child, body main section > div:last-child > div .information form input[type=number]:nth-child(2), body main section > div:last-child > div .information form input[type=number]:nth-child(5), body main section > div:last-child > div .information form input[type=number]:nth-child(8), body main section > div:last-child > div .information form input[type=number]:nth-child(9) {
+body main section > div:last-child > div .information form input[type=text]:first-child, body main section > div:last-child > div .information form input[type=text]:nth-child(2), body main section > div:last-child > div .information form input[type=text]:nth-child(5), body main section > div:last-child > div .information form input[type=text]:nth-child(8), body main section > div:last-child > div .information form input[type=text]:nth-child(9),
+body main section > div:last-child > div .information form input[type=email]:first-child,
+body main section > div:last-child > div .information form input[type=email]:nth-child(2),
+body main section > div:last-child > div .information form input[type=email]:nth-child(5),
+body main section > div:last-child > div .information form input[type=email]:nth-child(8),
+body main section > div:last-child > div .information form input[type=email]:nth-child(9),
+body main section > div:last-child > div .information form input[type=number]:first-child,
+body main section > div:last-child > div .information form input[type=number]:nth-child(2),
+body main section > div:last-child > div .information form input[type=number]:nth-child(5),
+body main section > div:last-child > div .information form input[type=number]:nth-child(8),
+body main section > div:last-child > div .information form input[type=number]:nth-child(9) {
   width: 45%;
 }
-body main section > div:last-child > div .information form input::-o-inner-spin-button, body main section > div:last-child > div .information form input::-o-outer-spin-button {
+body main section > div:last-child > div .information form input::-o-inner-spin-button,
+body main section > div:last-child > div .information form input::-o-outer-spin-button {
   -o-appearance: none;
   margin: 0;
 }
-body main section > div:last-child > div .information form input[type=number]::-webkit-inner-spin-button, body main section > div:last-child > div .information form input[type=number]::-webkit-outer-spin-button {
+body main section > div:last-child > div .information form input[type=number]::-webkit-inner-spin-button,
+body main section > div:last-child > div .information form input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -211,7 +284,8 @@ body main section > div:last-child > div > div:last-child > div div {
   height: min-content;
   padding-bottom: 5%;
 }
-body main section > div:last-child > div > div:last-child > div div input, body main section > div:last-child > div > div:last-child > div div label {
+body main section > div:last-child > div > div:last-child > div div input,
+body main section > div:last-child > div > div:last-child > div div label {
   cursor: pointer;
 }
 body main section > div:last-child > div > div:last-child > div div a {
@@ -322,6 +396,8 @@ body main section > div:last-child > div > div:last-child > div div img {
     text-align: center;
   }
   body nav ul li a {
+    font-size: 24px;
+    color: #ffffff;
     padding-top: 4%;
     padding-bottom: 4%;
   }
@@ -383,10 +459,21 @@ body main section > div:last-child > div > div:last-child > div div img {
   body main section > div:last-child > div .information form select#Payement {
     display: inherit;
   }
-  body main section > div:last-child > div .information form input[type=text]:first-child, body main section > div:last-child > div .information form input[type=text]:nth-child(2), body main section > div:last-child > div .information form input[type=text]:nth-child(5), body main section > div:last-child > div .information form input[type=text]:nth-child(8), body main section > div:last-child > div .information form input[type=text]:nth-child(9), body main section > div:last-child > div .information form input[type=email]:first-child, body main section > div:last-child > div .information form input[type=email]:nth-child(2), body main section > div:last-child > div .information form input[type=email]:nth-child(5), body main section > div:last-child > div .information form input[type=email]:nth-child(8), body main section > div:last-child > div .information form input[type=email]:nth-child(9), body main section > div:last-child > div .information form input[type=number]:first-child, body main section > div:last-child > div .information form input[type=number]:nth-child(2), body main section > div:last-child > div .information form input[type=number]:nth-child(5), body main section > div:last-child > div .information form input[type=number]:nth-child(8), body main section > div:last-child > div .information form input[type=number]:nth-child(9) {
+  body main section > div:last-child > div .information form input[type=text]:first-child, body main section > div:last-child > div .information form input[type=text]:nth-child(2), body main section > div:last-child > div .information form input[type=text]:nth-child(5), body main section > div:last-child > div .information form input[type=text]:nth-child(8), body main section > div:last-child > div .information form input[type=text]:nth-child(9),
+body main section > div:last-child > div .information form input[type=email]:first-child,
+body main section > div:last-child > div .information form input[type=email]:nth-child(2),
+body main section > div:last-child > div .information form input[type=email]:nth-child(5),
+body main section > div:last-child > div .information form input[type=email]:nth-child(8),
+body main section > div:last-child > div .information form input[type=email]:nth-child(9),
+body main section > div:last-child > div .information form input[type=number]:first-child,
+body main section > div:last-child > div .information form input[type=number]:nth-child(2),
+body main section > div:last-child > div .information form input[type=number]:nth-child(5),
+body main section > div:last-child > div .information form input[type=number]:nth-child(8),
+body main section > div:last-child > div .information form input[type=number]:nth-child(9) {
     width: 100%;
   }
-  body main section > div:last-child > div .information form input[type=number]::-webkit-inner-spin-button, body main section > div:last-child > div .information form input[type=number]::-webkit-outer-spin-button {
+  body main section > div:last-child > div .information form input[type=number]::-webkit-inner-spin-button,
+body main section > div:last-child > div .information form input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
@@ -413,8 +500,6 @@ body main section > div:last-child > div > div:last-child > div div img {
     font-size: 7vw !important;
   }
 }
-
-/*# sourceMappingURL=panier.css.map */
 #CybotCookiebotDialog #CybotCookiebotDialogBodyButtonDecline {
   background: a82819;
 }
@@ -432,3 +517,5 @@ body main section > div:last-child > div > div:last-child > div div img {
 #CybotCookiebotDialog #CybotCookiebotDialogBodyContent #CybotCookiebotDialogBodyContentTitle {
   text-align: center;
 }
+
+/*# sourceMappingURL=panier.css.map */

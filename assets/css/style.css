@@ -42,12 +42,63 @@ p {
 }
 
 body {
-  color: #ffffff;
+  color: #40281F;
   font-family: "Oswald";
   font-size: 18px;
 }
-body > div:not(:first-child) {
+body > div:not(:first-child):not(#backTop) {
   display: none !important;
+}
+body > div#backTop {
+  position: fixed;
+  bottom: 6%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  background: #40281F;
+  border: solid 1px #F2B138;
+  border-radius: 50px;
+  overflow: hidden;
+  z-index: 888;
+  opacity: 0;
+  transition: 0.5s;
+}
+body > div#backTop a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #F2B138;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  animation: jump 2s infinite;
+}
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  20% {
+    bottom: 5px;
+  }
+  30% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 5px;
+  }
+  50% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+body > div#backTop.backTop {
+  display: inherit;
+  opacity: 1;
+  transition: 0.5s;
 }
 body nav {
   width: 100%;
@@ -79,18 +130,25 @@ body nav ul li {
   list-style: none;
 }
 body nav ul li a {
-  color: #ffffff;
+  color: #40281F;
   font-size: 24px;
   text-decoration: none;
   display: block;
+  transition: 0.5s;
 }
 body nav ul li a img {
   width: 44px;
   height: 44px;
 }
+body nav.scroll ul li a {
+  color: #ffffff;
+  transition: 0.5s;
+}
 body main section {
   width: 100%;
-  height: 92vh;
+  height: auto;
+  align-items: center;
+  min-height: max-content;
   padding-top: 8vh;
   background: #F2B138;
 }
@@ -110,6 +168,7 @@ body main section:first-child {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 92vh;
 }
 body main section:first-child h1 {
   display: none;
@@ -138,23 +197,22 @@ body main section:nth-child(2) > div:first-child > div {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-body main section:nth-child(2) > div:first-child > div div {
+body main section:nth-child(2) > div:first-child > div > div {
   width: 33%;
   padding-top: 4%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-body main section:nth-child(2) > div:first-child > div div:first-child {
-  display: block;
-}
-body main section:nth-child(2) > div:first-child > div div:nth-child(2) {
-  display: block;
-}
-body main section:nth-child(2) > div:first-child > div div img {
-  width: 35%;
+body main section:nth-child(2) > div:first-child > div > div > div {
   background: #40281F;
+  width: 80px;
+  height: 80px;
+  padding: 10%;
   border-radius: 50%;
+  overflow: hidden;
 }
-body main section:nth-child(2) > div:first-child > div div span {
+body main section:nth-child(2) > div:first-child > div > div span {
   display: block;
 }
 body main section:nth-child(2) > div:last-child {
@@ -189,7 +247,7 @@ body main section:nth-child(4) {
 }
 body main section:nth-child(4) .slider {
   width: 70%;
-  height: 100%;
+  height: 92vh;
   position: relative;
   overflow: hidden;
   padding: 0;
@@ -402,7 +460,8 @@ body main section:nth-child(5) #plateau > div > div:nth-child(3) div {
   display: flex;
 }
 body main section:nth-child(5) #plateau > div > div:nth-child(3) div:first-child {
-  padding-right: 10%;
+  padding-right: 7%;
+  padding-bottom: 5%;
   justify-content: flex-end;
   align-items: flex-end;
 }
@@ -411,7 +470,7 @@ body main section:nth-child(5) #plateau > div > div:nth-child(3) div:nth-child(2
   align-items: flex-end;
 }
 body main section:nth-child(5) #plateau > div > div:nth-child(3) div:nth-child(3) {
-  padding-right: 10%;
+  padding-right: 7%;
   justify-content: flex-end;
   align-items: flex-start;
 }
@@ -423,7 +482,7 @@ body main section:nth-child(5) #plateau > div > div:nth-child(3) div img {
   height: 50%;
   transform: rotate(-90deg);
   border-radius: 5px;
-  box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.75);
 }
 body main section:nth-child(5) #plateau > div > img {
   width: 10%;
@@ -499,6 +558,7 @@ body main section:nth-child(5) a:hover {
 body main section:nth-child(6) {
   display: flex;
   justify-content: space-evenly;
+  padding-bottom: 2%;
 }
 body main section:nth-child(6) > div:first-child {
   width: 45%;
@@ -555,22 +615,30 @@ body main section:last-child form {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-body main section:last-child form input[type=text], body main section:last-child form input[type=email], body main section:last-child form input[type=number] {
+body main section:last-child form div {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  padding-left: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
+}
+body main section:last-child form div:nth-child(1) {
+  width: 45%;
+}
+body main section:last-child form div:nth-child(2) {
+  width: 45%;
+}
+body main section:last-child form div label {
+  color: #ffffff;
+}
+body main section:last-child form div input[type=text], body main section:last-child form div input[type=email], body main section:last-child form div input[type=number] {
+  width: 100%;
   background: #ffffff;
   border: solid 1px #40281F;
   border-radius: 50px;
-}
-body main section:last-child form input[type=text]:nth-child(2), body main section:last-child form input[type=email]:nth-child(2), body main section:last-child form input[type=number]:nth-child(2) {
-  width: 45%;
-}
-body main section:last-child form input[type=text]:nth-child(4), body main section:last-child form input[type=email]:nth-child(4), body main section:last-child form input[type=number]:nth-child(4) {
-  width: 45%;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  padding-left: 1vw;
 }
 body main section:last-child form input[type=number]::-webkit-inner-spin-button, body main section:last-child form input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -597,6 +665,9 @@ body main section:last-child form input[type=submit] {
 body main section:last-child form input[type=submit]:hover {
   background: transparent;
   transition: 1s;
+}
+body main section:last-child p {
+  color: #ffffff;
 }
 body main#information {
   background: #F2B138;
@@ -640,6 +711,9 @@ body footer {
   background: #40281F;
   box-sizing: border-box;
 }
+body footer p {
+  color: #ffffff;
+}
 body footer p a {
   color: #ffffff;
   text-decoration: none;
@@ -650,6 +724,10 @@ body footer a {
   text-decoration: none;
   border-radius: 50px;
   overflow: hidden;
+}
+body footer a:hover img {
+  transform: rotate(360deg);
+  transition: 0.8s ease-out;
 }
 body footer a img {
   width: 100%;
@@ -872,6 +950,7 @@ body footer a img {
   }
   body nav ul li a {
     font-size: 24px;
+    color: #ffffff;
     padding-top: 4%;
     padding-bottom: 4%;
   }

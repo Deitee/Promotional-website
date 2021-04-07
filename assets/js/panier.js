@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   var date = document.getElementById('date');
 
   function checkValue(str, max) {
@@ -10,29 +10,29 @@ document.addEventListener("DOMContentLoaded", function() {
     return str;
   };
 
-  date.addEventListener('input', function(e) {
+  date.addEventListener('input', function (e) {
     this.type = 'text';
     var input = this.value;
     if (/\D\/$/.test(input)) input = input.substr(0, input.length - 3);
-    var values = input.split('/').map(function(v) {
+    var values = input.split('/').map(function (v) {
       return v.replace(/\D/g, '')
     });
     if (values[0]) values[0] = checkValue(values[0], 12);
     if (values[1]) values[1] = checkValue(values[1], 31);
-    var output = values.map(function(v, i) {
+    var output = values.map(function (v, i) {
       return v.length == 2 && i < 2 ? v + ' / ' : v;
     });
     this.value = output.join('').substr(0, 14);
   });
 
-  date.addEventListener('blur', function(e) {
+  date.addEventListener('blur', function (e) {
     this.type = 'text';
     var input = this.value;
-    var values = input.split('/').map(function(v, i) {
+    var values = input.split('/').map(function (v, i) {
       return v.replace(/\D/g, '')
     });
     var output = '';
-    
+
     if (values.length == 3) {
       var year = values[2].length !== 4 ? parseInt(values[2]) + 2000 : parseInt(values[2]);
       var month = parseInt(values[0]) - 1;
@@ -41,12 +41,76 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!isNaN(d)) {
         document.getElementById('result').innerText = d.toString();
         var dates = [d.getMonth() + 1, d.getDate(), d.getFullYear()];
-        output = dates.map(function(v) {
+        output = dates.map(function (v) {
           v = v.toString();
           return v.length == 1 ? '0' + v : v;
         }).join(' / ');
       };
     };
     this.value = output;
+  });
+})
+document.addEventListener("DOMContentLoaded", function() {
+  // recuperation des variables
+  const burger = document.querySelector('#burger-nav'); //burger qui contient h1 + les deux span
+  const spancheck = document.querySelector('.span-burger');
+  const spancheck1 = document.querySelector('.span-burger1');
+  const ul = document.querySelector('#ul'); // ul qui se déplace de haut en bas
+
+  var linkNav = document.querySelector('.link-nav');
+  var linkNav1 = document.querySelector('.link-nav1');
+  var linkNav2 = document.querySelector('.link-nav2');
+  var linkNav3 = document.querySelector('.link-nav3');
+  var linkNav4 = document.querySelector('.link-nav4');
+
+  // si on clic sur le menu burger
+  // on ajoute les class
+  burger.onclick = function () {
+    ul.classList.toggle('translate');
+    spancheck.classList.toggle('rotate1');
+    spancheck1.classList.toggle('rotate2');
+  };
+  // clic sur les  liens qui permettent de scroll + fermer la nav
+  linkNav.onclick = function () {
+    ul.classList.toggle('translate');
+    spancheck.classList.toggle('rotate1');
+    spancheck1.classList.toggle('rotate2');
+  };
+  linkNav1.onclick = function () {
+    ul.classList.toggle('translate');
+    spancheck.classList.toggle('rotate1');
+    spancheck1.classList.toggle('rotate2');
+  };
+  linkNav2.onclick = function () {
+    ul.classList.toggle('translate');
+    spancheck.classList.toggle('rotate1');
+    spancheck1.classList.toggle('rotate2');
+  };
+  linkNav3.onclick = function () {
+    ul.classList.toggle('translate');
+    spancheck.classList.toggle('rotate1');
+    spancheck1.classList.toggle('rotate2');
+  };
+  linkNav4.onclick = function () {
+    ul.classList.toggle('translate');
+    spancheck.classList.toggle('rotate1');
+    spancheck1.classList.toggle('rotate2');
+  };
+
+  // changement contenu de la balise title en fonctione de si l'utilisateur est sur la page ou non
+  if (document.documentElement.lang === "fr") { // detecter si la page est en français
+    nouveauTitre = "Revenez shérif !";
+  } else if (document.documentElement.lang === "en") { // Sinon si elle est en anglais
+    nouveauTitre = "Come back sheriff !";
+  }
+
+  titreNormal = document.title;
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === 'visible') { // Si l'utilisateur est sur la page on affiche le titre html
+      document.title = titreNormal;
+    } else { // Sinon on affiche le nouveau titre décrit dans la variable
+      document.title = nouveauTitre;
+    }
   });
 })

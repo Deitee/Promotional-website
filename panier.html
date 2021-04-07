@@ -8,7 +8,7 @@
 	<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="f3ef2f6b-d132-4bec-a439-58493a95121e" data-blockingmode="auto" type="text/javascript"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="assets/js/panier.js"></script>
-    <script src="assets/js/app.js"></script>
+    <!-- <script src="assets/js/app.js"></script> -->
 	<title>Westown Sheriff - Panier</title>
 </head>
 <body>
@@ -385,12 +385,15 @@
             </div>
         </section>
     </main>
+    <div id="backTop">
+		<a href="#top">↑</a>
+	</div>
     <script>
         new Vue({
             el:'.container',
             data: {
                 selected: 1,
-                price: 14.99,
+                price: 13.50,
                 options: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
             }
         });
