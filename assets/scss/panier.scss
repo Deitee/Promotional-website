@@ -149,6 +149,8 @@ body {
                 height: 100%;
                 padding-left: 5%;
                 padding-right: 5%;
+                position: relative;
+                z-index: 1;
 
                 img {
                     width: 100%;
@@ -208,11 +210,151 @@ body {
                     .information {
                         width: 60%;
                         height: min-content;
+                        position: relative;
+                        &.showValidation{
+                            position: inherit;
+                        }
 
                         form {
                             display: flex;
                             flex-wrap: wrap;
                             justify-content: space-between;
+                            div#validation{
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                top: 0;
+                                opacity: 0;
+                                z-index: 0;
+                                background-color: rgba($white, 0);
+                                backdrop-filter: blur(0px);
+                                transition: .5s;
+
+                                &.showValidation{
+                                    z-index: 1001;
+                                    background-color: rgba($white, .2);
+                                    backdrop-filter: blur(20px);
+                                    opacity: 1;
+                                    transition: .5s;
+
+                                    >div{
+                                        bottom: 0;
+                                        opacity: 1;
+                                        display: inherit;
+                                    }
+                                }
+                                >div{
+                                    opacity: 0;
+                                    position: absolute;
+                                    display: none;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: -100%;
+                                    width: 50%;
+                                    height: max-content;
+                                    max-height: 80%;
+                                    margin: auto;
+                                    background: $brown;
+                                    padding-top: 20px;
+                                    padding-left: 20px;
+                                    padding-right: 20px;
+                                    padding-bottom: 20px;
+                                    border-radius: 40px;
+                                    transition: .5s;
+
+                                    h2 {
+                                        color: $yellow;
+                                        font-family: $title-font;
+                                        font-size: $menu;
+                                        font-weight: 100;
+                                        margin: 0;
+                                        text-align: center;
+                                        width: 100%;
+                                    }
+                        
+                                    // bouton qui ferme la pop-up
+                                    >div:first-child {
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: flex-end;
+                                        padding-bottom: 2%;
+                                        padding-right: 2%;
+                        
+                                        div {
+                                            width: 20px;
+                                            height: 20px;
+                                            position: relative;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            transition: .5s;
+                                            border-radius: 50%;
+                        
+                                            &.hideDiv {
+                                                transform: rotate(360deg);
+                                                transition: .5s;
+                                            }
+                        
+                                            &:hover {
+                                                cursor: pointer;
+                                                transform: rotate(90deg);
+                                                transition: .5s;
+                                            }
+                        
+                                            span {
+                                                position: absolute;
+                                                width: 20px;
+                                                height: 6px;
+                                                background: $yellow;
+                                                border-radius: 50px;
+                        
+                                                &:last-child {
+                                                    transform: rotate(90deg);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    >div:last-child{
+                                        display: flex;
+                                        justify-content: center;
+                                        flex-direction: column;
+                                        a, input{
+                                            color: $brown;
+                                            text-decoration: none;
+                                            font-size: $button;
+                                            font-family: $title-font;
+                                            padding-left: 3%;
+                                            padding-right: 3%;
+                                            padding-top: .5%;
+                                            padding-bottom: .5%;
+                                            background: $yellow;
+                                            border: solid 2px $yellow;
+                                            border-radius: 50px;
+                                            cursor: pointer;
+                                            margin-top: 2%;
+                                            margin-left: auto;
+                                            margin-right: auto;
+                                            transition: 1s;
+                                            &:hover{
+                                                background: $brown;
+                                                color: $yellow;
+                                                transition: .5s;
+                                            }
+                                            input{
+                                                background: $brown;
+                                                border: solid 2px $yellow;
+                                                color: $yellow;
+                                                a:hover{
+                                                    background: $yellow;
+                                                    color: $brown;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
 
                             select {
                                 width: 45%;
@@ -224,10 +366,16 @@ body {
                                 background: #ffffff;
                                 border: solid 1px #40281F;
                                 border-radius: 50px;
+                                position: relative;
+                                z-index: 1;
 
                                 &#Payement {
                                     display: none;
                                 }
+                            }
+                            a{
+                                position: relative;
+                                z-index: 1;
                             }
 
                             input[type=text],
@@ -243,6 +391,8 @@ body {
                                 border: solid 1px $brown;
                                 border-radius: 50px;
                                 -moz-appearance: textfield;
+                                position: relative;
+                                z-index: 1;
 
                                 &:first-child,
                                 &:nth-child(2),
@@ -265,7 +415,7 @@ body {
                                 margin: 0;
                             }
 
-                            input[type=submit] {
+                            >a{
                                 color: $white;
                                 text-decoration: none;
                                 font-size: $button;

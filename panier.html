@@ -78,7 +78,7 @@
                             <input type="text" placeholder="Nom" required>
                             <input type="text" placeholder="Prénom" required>
                             <input type="email" placeholder="Email" required>
-                            <select class="form-control">
+                            <select class="form-control" required>
                                 <option value="France" selected="selected">France </option>
                                 <option value="Afghanistan">Afghanistan </option>
                                 <option value="Afrique_Centrale">Afrique_Centrale </option>
@@ -338,7 +338,7 @@
                             <input type="number" placeholder="Numéro de carte" required>
                             <input type="text" id="date" placeholder="Date d'expiration" required>
                             <input type="number" placeholder="CGV" required>
-                            <select id="Payement">
+                            <select id="Payement" required>
                                 <option value="Visas" selected="selected">Visa</option>
                                 <option value="Paypal">
                                     <a href="https://paypal.me/LaMasseThe?locale.x=fr_FR">Paypal</a>
@@ -347,14 +347,29 @@
                                 <option value="CB">Carte bancaire</option>
                             </select>
                             <span>En effectuant un achat, vous acceptez les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a>. Tout abonnement sera automatiquement renouvelé et votre carte de crédit sera débitée de l'abonnement gratuitement. Vous pouvez annuler ou modifier votre abonnement à tout moment à partir de la page de votre compte.</span>
-                            <input type="submit" value="Valider la commande">
+                            <a href="#" id="boutonValidation">Valider ma commande</a>
+                            <div id="validation">
+                                <div>
+                                    <div>
+                                        <div id="closeValidation">
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <h2>Souhaitez-vous essayer le jeu avant d'acheter ?</h2>
+                                    <div>
+                                        <a href="https://deite.fr/jeu/index.php" target="_blank">Oui, je vais essayer</a>
+                                        <input type="submit" value="Non, je valide ma commande">
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     <div>
                         <p>Moyen de paiement</p>
                         <div>
                             <div>
-                                <input type="radio" id="radio1" name="average" value="radio1" required>
+                                <input type="radio" id="radio1" name="average" value="radio1">
                                 <label for="radio1">
                                     <a href="https://paypal.me/LaMasseThe?locale.x=fr_FR">
                                         <img src="assets/img/picto/picto_paypal.png" alt="Pictogramme du logo Paypal">
@@ -362,19 +377,19 @@
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="radio2" name="average" value="radio2" required>
+                                <input type="radio" id="radio2" name="average" value="radio2">
                                 <label for="radio2">
                                     <img src="assets/img/picto/picto_mastercard.png" alt="Pictogramme du logo des mastercard">
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="radio3" name="average" value="radio3" required>
+                                <input type="radio" id="radio3" name="average" value="radio3">
                                 <label for="radio3">
                                     <img src="assets/img/picto/picto_cb.png" alt="Pictogramme du logo des cartes bancaire">
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="radio4" name="average" value="radio4" required>
+                                <input type="radio" id="radio4" name="average" value="radio4" checked>
                                 <label for="radio4">
                                     <img src="assets/img/picto/picto_visa.png" alt="Pictogramme du logo des cartes Visa">
                                 </label>

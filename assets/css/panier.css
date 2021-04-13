@@ -138,6 +138,8 @@ body main section > div:first-child {
   height: 100%;
   padding-left: 5%;
   padding-right: 5%;
+  position: relative;
+  z-index: 1;
 }
 body main section > div:first-child img {
   width: 100%;
@@ -186,11 +188,141 @@ body main section > div:last-child > div {
 body main section > div:last-child > div .information {
   width: 60%;
   height: min-content;
+  position: relative;
+}
+body main section > div:last-child > div .information.showValidation {
+  position: inherit;
 }
 body main section > div:last-child > div .information form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+body main section > div:last-child > div .information form div#validation {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  opacity: 0;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(0px);
+  transition: 0.5s;
+}
+body main section > div:last-child > div .information form div#validation.showValidation {
+  z-index: 1001;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  opacity: 1;
+  transition: 0.5s;
+}
+body main section > div:last-child > div .information form div#validation.showValidation > div {
+  bottom: 0;
+  opacity: 1;
+  display: inherit;
+}
+body main section > div:last-child > div .information form div#validation > div {
+  opacity: 0;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  width: 50%;
+  height: max-content;
+  max-height: 80%;
+  margin: auto;
+  background: #40281F;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 40px;
+  transition: 0.5s;
+}
+body main section > div:last-child > div .information form div#validation > div h2 {
+  color: #F2B138;
+  font-family: "Rye";
+  font-size: 24px;
+  font-weight: 100;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+body main section > div:last-child > div .information form div#validation > div > div:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 2%;
+  padding-right: 2%;
+}
+body main section > div:last-child > div .information form div#validation > div > div:first-child div {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 50%;
+}
+body main section > div:last-child > div .information form div#validation > div > div:first-child div.hideDiv {
+  transform: rotate(360deg);
+  transition: 0.5s;
+}
+body main section > div:last-child > div .information form div#validation > div > div:first-child div:hover {
+  cursor: pointer;
+  transform: rotate(90deg);
+  transition: 0.5s;
+}
+body main section > div:last-child > div .information form div#validation > div > div:first-child div span {
+  position: absolute;
+  width: 20px;
+  height: 6px;
+  background: #F2B138;
+  border-radius: 50px;
+}
+body main section > div:last-child > div .information form div#validation > div > div:first-child div span:last-child {
+  transform: rotate(90deg);
+}
+body main section > div:last-child > div .information form div#validation > div > div:last-child {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+body main section > div:last-child > div .information form div#validation > div > div:last-child a, body main section > div:last-child > div .information form div#validation > div > div:last-child input {
+  color: #40281F;
+  text-decoration: none;
+  font-size: 40px;
+  font-family: "Rye";
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  background: #F2B138;
+  border: solid 2px #F2B138;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 1s;
+}
+body main section > div:last-child > div .information form div#validation > div > div:last-child a:hover, body main section > div:last-child > div .information form div#validation > div > div:last-child input:hover {
+  background: #40281F;
+  color: #F2B138;
+  transition: 0.5s;
+}
+body main section > div:last-child > div .information form div#validation > div > div:last-child a input, body main section > div:last-child > div .information form div#validation > div > div:last-child input input {
+  background: #40281F;
+  border: solid 2px #F2B138;
+  color: #F2B138;
+}
+body main section > div:last-child > div .information form div#validation > div > div:last-child a input a:hover, body main section > div:last-child > div .information form div#validation > div > div:last-child input input a:hover {
+  background: #F2B138;
+  color: #40281F;
 }
 body main section > div:last-child > div .information form select {
   width: 45%;
@@ -202,9 +334,15 @@ body main section > div:last-child > div .information form select {
   background: #ffffff;
   border: solid 1px #40281F;
   border-radius: 50px;
+  position: relative;
+  z-index: 1;
 }
 body main section > div:last-child > div .information form select#Payement {
   display: none;
+}
+body main section > div:last-child > div .information form a {
+  position: relative;
+  z-index: 1;
 }
 body main section > div:last-child > div .information form input[type=text],
 body main section > div:last-child > div .information form input[type=email],
@@ -219,6 +357,8 @@ body main section > div:last-child > div .information form input[type=number] {
   border: solid 1px #40281F;
   border-radius: 50px;
   -moz-appearance: textfield;
+  position: relative;
+  z-index: 1;
 }
 body main section > div:last-child > div .information form input[type=text]:first-child, body main section > div:last-child > div .information form input[type=text]:nth-child(2), body main section > div:last-child > div .information form input[type=text]:nth-child(5), body main section > div:last-child > div .information form input[type=text]:nth-child(8), body main section > div:last-child > div .information form input[type=text]:nth-child(9),
 body main section > div:last-child > div .information form input[type=email]:first-child,
@@ -243,7 +383,7 @@ body main section > div:last-child > div .information form input[type=number]::-
   -webkit-appearance: none;
   margin: 0;
 }
-body main section > div:last-child > div .information form input[type=submit] {
+body main section > div:last-child > div .information form > a {
   color: #ffffff;
   text-decoration: none;
   font-size: 40px;
@@ -261,7 +401,7 @@ body main section > div:last-child > div .information form input[type=submit] {
   margin-right: auto;
   transition: 1s;
 }
-body main section > div:last-child > div .information form input[type=submit]:hover {
+body main section > div:last-child > div .information form > a:hover {
   background: transparent;
   transition: 1s;
 }

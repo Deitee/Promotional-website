@@ -168,7 +168,7 @@ body main section:first-child {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 92vh;
+  height: 100vh !important;
 }
 body main section:first-child h1 {
   display: none;
@@ -225,6 +225,7 @@ body main section:nth-child(2) > div:last-child {
 }
 body main section:nth-child(2) > div:last-child img {
   width: 100%;
+  max-height: 92vh;
 }
 body main section:nth-child(3) {
   text-align: center;
