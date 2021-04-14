@@ -125,6 +125,17 @@ body nav.scroll ul li a {
   color: #ffffff;
   transition: 0.5s;
 }
+body main#index {
+  height: 100vh !important;
+}
+body main#index section {
+  padding: 0;
+  height: 100vh !important;
+}
+body main#index section #btn {
+  display: flex !important;
+  justify-content: center;
+}
 body main section {
   width: 100%;
   min-height: 85vh;
@@ -140,10 +151,6 @@ body main section > div:first-child {
   padding-right: 5%;
   position: relative;
   z-index: 1;
-}
-body main section > div:first-child img {
-  width: 100%;
-  height: 50vh;
 }
 body main section > div:first-child h2 {
   display: none;
@@ -161,11 +168,61 @@ body main section > div:first-child p:last-of-type {
 body main section > div:first-child hr {
   border: solid 1px #40281F;
 }
-body main section > div:first-child > div div {
+body main section > div:first-child > div:first-child {
+  width: 100%;
+  height: 50vh;
+  padding: 0 !important;
+  overflow: hidden;
+}
+body main section > div:first-child > div:first-child > div {
+  width: 400%;
+  height: 100%;
+  display: flex;
+}
+body main section > div:first-child > div:first-child > div > div {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  animation: translateImage 25s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main section > div:first-child > div:first-child > div > div img {
+  width: fit-content;
+  height: 100%;
+}
+@keyframes translateImage {
+  0% {
+    transform: translateX(0%);
+  }
+  18% {
+    transform: translateX(0%);
+  }
+  30% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  62% {
+    transform: translateX(-200%);
+  }
+  86% {
+    transform: translateX(-200%);
+  }
+  98% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+body main section > div:first-child > div:last-child div {
   display: flex;
   justify-content: space-between;
 }
-body main section > div:first-child > div div select {
+body main section > div:first-child > div:last-child div select {
   padding-left: 2%;
   background: #ffffff;
   border: solid 1px #40281F;
@@ -435,6 +492,100 @@ body main section > div:last-child > div > div:last-child > div div a {
 }
 body main section > div:last-child > div > div:last-child > div div img {
   width: 40px;
+}
+body main section #container-redirect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  transition: 0.3s ease-in-out;
+}
+body main section #container-redirect #redirect {
+  padding: 2%;
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+  background: #F2B138;
+  border-radius: 60px;
+  border: 2px solid #40281F;
+  box-shadow: 0px 0px 5px #40281F;
+  width: 50%;
+  height: 70%;
+  display: none;
+  transition: 0.3s ease-in-out;
+}
+body main section #container-redirect #redirect h3 {
+  margin: 0;
+  font-family: "Rye";
+  font-size: 40px;
+  text-align: center;
+  font-weight: 10;
+  padding-bottom: 3%;
+  padding-right: 3%;
+}
+body main section #container-redirect #redirect p {
+  text-align: center;
+  font-size: 20px;
+  transition: 0.2s ease-in-out;
+}
+body main section #container-redirect #redirect #line {
+  margin: 0 auto;
+}
+body main section #container-redirect #redirect svg {
+  width: 30px;
+  height: 30px;
+  margin: 8% 0%;
+}
+body main section #container-redirect #redirect #text-btn:hover {
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+body main section #container-redirect #redirect #text-btn:hover + #btn {
+  transform: scale(1.2);
+}
+body main section #container-redirect #redirect #btn {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 40px;
+  font-family: "Rye";
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  background: #40281F;
+  border: solid 2px #40281F;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 1s;
+  width: 60%;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+body main section #container-redirect #redirect #btn a {
+  text-decoration: none;
+  color: #fff;
+}
+body main section #container-redirect #redirect #btn:hover {
+  background: transparent;
+  transition: 1s;
+}
+@media screen and (max-width: 960px) {
+  body main section #container-redirect #redirect {
+    padding: 5%;
+  }
+  body main section #container-redirect #redirect h3 {
+    font-size: 25px;
+  }
+  body main section #container-redirect #redirect #btn {
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 960px) {
